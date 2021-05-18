@@ -5,6 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Satisfy test dependencies
+        run: pip3 install pytest==6.2.3
       - name: Build the stack
         run: docker-compose up -d
       - name: Test
